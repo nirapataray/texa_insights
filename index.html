@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Request a data consultancy quote from Texa Insights.">
+
+    <title>Request a Quote | Texa Insights</title>
+
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="css/quote.css">
+
+    <!-- Load JavaScript after the HTML is parsed -->
+    <script src="js/quote-calculator.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Website header -->
+    <header class="hero">
+        <a href="index.html" class="brand">TEXA <span>INSIGHTS</span></a>
+
+        <h1>Request a Quote</h1>
+
+        <p>
+            Tell us about your project and get an estimated price
+            for our data consultancy services.
+        </p>
+    </header>
+
+    <!-- Main content -->
+    <main class="container">
+
+        <div class="quote-layout">
+
+            <!-- Quote request form -->
+            <section class="card">
+                <h2>Project Details</h2>
+
+                <form id="quoteForm">
+
+                    <h3>Your Information</h3>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                autocomplete="name"
+                                maxlength="100"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                autocomplete="email"
+                                maxlength="254"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input
+                                type="text"
+                                id="company"
+                                name="company"
+                                autocomplete="organization"
+                                maxlength="120">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                autocomplete="tel"
+                                maxlength="30">
+                        </div>
+
+                    </div>
+
+                    <h3>Project Requirements</h3>
+
+                    <div class="form-grid">
+
+                        <div class="form-group full-width">
+                            <label for="service">Service Required *</label>
+
+                            <select id="service" name="service" required>
+                                <option value="analysis">
+                                    Data Analysis — R2,500
+                                </option>
+
+                                <option value="dashboard" selected>
+                                    Dashboard Development — R3,500
+                                </option>
+
+                                <option value="cleaning">
+                                    Data Cleaning — R1,800
+                                </option>
+
+                                <option value="forecasting">
+                                    Forecasting and Predictive Analytics — R5,000
+                                </option>
+
+                                <option value="consulting">
+                                    Data Strategy Consultation — R2,000
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="scope">Project Size *</label>
+
+                            <select id="scope" name="scope" required>
+                                <option value="small">Small — 0.70×</option>
+                                <option value="medium" selected>
+                                    Medium — 1.00×
+                                </option>
+                                <option value="large">Large — 1.80×</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="complexity">Complexity *</label>
+
+                            <select id="complexity" name="complexity" required>
+                                <option value="basic">Basic — 0.80×</option>
+                                <option value="standard" selected>
+                                    Standard — 1.00×
+                                </option>
+                                <option value="advanced">
+                                    Advanced — 1.60×
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="urgency">Delivery Time *</label>
+
+                            <select id="urgency" name="urgency" required>
+                                <option value="standard" selected>
+                                    Standard — No extra charge
+                                </option>
+
+                                <option value="priority">
+                                    Priority — +25%
+                                </option>
+
+                                <option value="rush">
+                                    Urgent — +50%
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="deadline">Preferred Deadline</label>
+
+                            <input
+                                type="date"
+                                id="deadline"
+                                name="deadline">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="description">
+                                Describe Your Project *
+                            </label>
+
+                            <textarea
+                                id="description"
+                                name="description"
+                                minlength="10"
+                                maxlength="3000"
+                                placeholder="Describe your business problem and the results you need."
+                                required></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="consent">
+                        <input
+                            type="checkbox"
+                            id="consent"
+                            name="consent"
+                            required>
+
+                        <label for="consent">
+                            I agree that Texa Insights may use my details
+                            to respond to this quote request. *
+                        </label>
+                    </div>
+
+                    <button type="submit" id="submitQuote">
+                        Submit Quote Request
+                    </button>
+
+                    <p id="formMessage" role="status" aria-live="polite"></p>
+
+                </form>
+            </section>
+
+            <!-- Live price estimate -->
+            <aside class="card estimate-card">
+
+                <h2>Your Price Estimate</h2>
+
+                <p class="muted">
+                    Your estimate changes when you change your selections.
+                </p>
+
+                <div class="total-box">
+                    <p>Estimated Total</p>
+                    <strong id="estimateTotal">R 3 500</strong>
+                </div>
+
+                <div class="breakdown-row">
+                    <span>Service</span>
+                    <span id="breakdownService">Dashboard Development</span>
+                </div>
+
+                <div class="breakdown-row">
+                    <span>Base Price</span>
+                    <span id="breakdownBase">R 3 500</span>
+                </div>
+
+                <div class="breakdown-row">
+                    <span>Project Size</span>
+                    <span id="breakdownScope">× 1.00</span>
+                </div>
+
+                <div class="breakdown-row">
+                    <span>Complexity</span>
+                    <span id="breakdownComplexity">× 1.00</span>
+                </div>
+
+                <div class="breakdown-row">
+                    <span>Delivery</span>
+                    <span id="breakdownUrgency">× 1.00</span>
+                </div>
+
+                <div class="breakdown-row final-row">
+                    <span>Calculated Total</span>
+                    <span id="breakdownTotal">R 3 500</span>
+                </div>
+
+                <p class="disclaimer">
+                    This is an estimate, not a binding quotation.
+                    Final costs and delivery dates are subject to confirmation.
+                </p>
+
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- Website footer -->
+    <footer class="footer">
+        <p>
+            &copy; <span id="currentYear"></span> Texa Insights.
+            Data. Strategy. Growth.
+        </p>
+
+        <nav aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </footer>
+
+</body>
+</html>

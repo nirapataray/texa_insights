@@ -1,0 +1,360 @@
+
+/* =================================
+   TEXA INSIGHTS - QUOTE PAGE STYLES
+   ================================= */
+
+/* 1. Colour palette */
+
+:root {
+    --navy: #101d31;
+    --gold: #d6aa52;
+    --light-grey: #f4f6f9;
+    --white: #ffffff;
+    --text: #243247;
+    --muted: #657184;
+    --border: #dce2ea;
+}
+
+/* 2. Basic page styling */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--light-grey);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+/* 3. Header */
+
+.hero {
+    padding: 45px 20px 55px;
+    text-align: center;
+    background: var(--navy);
+    color: var(--white);
+}
+
+.brand {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.brand span {
+    color: var(--gold);
+}
+
+.hero h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.hero p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: #d5dce7;
+}
+
+/* 4. Main container and columns */
+
+.container {
+    width: min(1120px, 92%);
+    margin: 40px auto 65px;
+}
+
+.quote-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 25px;
+    align-items: start;
+}
+
+/* 5. Cards */
+
+.card {
+    min-width: 0;
+    padding: 28px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 6px 22px rgba(16, 29, 49, 0.05);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: var(--navy);
+    font-size: 1.5rem;
+}
+
+.card h3 {
+    margin: 28px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    color: var(--navy);
+    font-size: 1.05rem;
+}
+
+/* 6. Form layout */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+label {
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd3df;
+    border-radius: 6px;
+    background: var(--white);
+    color: var(--text);
+    font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* 7. Consent checkbox */
+
+.consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 24px 0;
+}
+
+.consent input {
+    width: auto;
+    margin-top: 6px;
+    accent-color: var(--navy);
+}
+
+.consent label {
+    font-weight: 400;
+}
+
+/* 8. Submit button */
+
+button {
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 6px;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: #c89a3e;
+}
+
+button:focus-visible {
+    outline: 3px solid var(--navy);
+    outline-offset: 3px;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* 9. Estimate panel */
+
+.estimate-card {
+    position: sticky;
+    top: 20px;
+}
+
+.muted,
+.disclaimer {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.total-box {
+    margin: 22px 0;
+    padding: 22px;
+    border-radius: 8px;
+    background: var(--navy);
+    color: var(--white);
+}
+
+.total-box p {
+    margin: 0;
+    color: #d5dce7;
+    font-size: 0.9rem;
+}
+
+.total-box strong {
+    display: block;
+    margin-top: 8px;
+    color: var(--gold);
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    overflow-wrap: anywhere;
+}
+
+.breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #edf0f4;
+    font-size: 0.9rem;
+}
+
+.breakdown-row span:first-child {
+    color: var(--muted);
+}
+
+.breakdown-row span:last-child {
+    text-align: right;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.final-row {
+    border-bottom: none;
+    color: var(--navy);
+    font-weight: 700;
+}
+
+.disclaimer {
+    margin-top: 20px;
+    font-size: 0.82rem;
+}
+
+/* 10. Form feedback */
+
+#formMessage {
+    overflow-wrap: anywhere;
+}
+
+#formMessage:empty {
+    display: none;
+}
+
+#formMessage.success {
+    padding: 12px;
+    border-radius: 6px;
+    background: #e6f5eb;
+    color: #155c32;
+}
+
+#formMessage.error {
+    padding: 12px;
+    border-radius: 6px;
+    background: #fff0ef;
+    color: #9b2424;
+}
+
+/* 11. Footer */
+
+.footer {
+    padding: 25px 15px;
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+}
+
+.footer nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* 12. Tablet layout */
+
+@media (max-width: 800px) {
+    .quote-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .estimate-card {
+        position: static;
+        grid-row: 1;
+    }
+}
+
+/* 13. Mobile layout */
+
+@media (max-width: 520px) {
+    .hero {
+        padding: 35px 18px 40px;
+    }
+
+    .container {
+        width: 94%;
+        margin-top: 20px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .footer nav {
+        gap: 12px;
+    }
+}
