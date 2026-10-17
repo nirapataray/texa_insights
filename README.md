@@ -164,7 +164,7 @@ This project provides practical experience with:
 
 ## Author
 
-**Texa Insights**
+**Raymond Nirapata**
 
 A data consultancy website project focused on helping organisations turn data into useful business insights.
 
